@@ -31,8 +31,6 @@ class ListActivity : AppCompatActivity() {
             intent.putExtra("collectionName", collectionName)
             startActivity(intent)
         }
-        Realm.init(applicationContext)
-        val realm = Realm.getDefaultInstance()
         val notesList = realm.where(
             Note::class.java
         ).findAll().sort("createdTime", Sort.DESCENDING)

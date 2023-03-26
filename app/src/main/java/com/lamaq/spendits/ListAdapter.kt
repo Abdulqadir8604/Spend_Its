@@ -1,12 +1,13 @@
 package com.lamaq.spendits
 
 import android.content.Context
+import android.os.Build
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.PopupMenu
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import io.realm.Realm
 import io.realm.RealmResults
@@ -24,8 +25,8 @@ class ListAdapter(var context: Context, var notesList: RealmResults<Note>) :
         val note = notesList[position]!!
         holder.amtOutput.text = note.amt
         holder.descriptionOutput.text = note.getDescription()
-        val formattedTime = DateFormat.getDateTimeInstance().format(note.getCreatedTime())
-        holder.timeOutput.text = formattedTime
+        val formatedTime = DateFormat.getDateTimeInstance().format(note.getCreatedTime())
+        holder.timeOutput.text = formatedTime
 
         holder.itemView.background.setTint(context.getColor(R.color.white))
         holder.amtOutput.setTextColor(context.getColor(R.color.dark))
@@ -37,11 +38,14 @@ class ListAdapter(var context: Context, var notesList: RealmResults<Note>) :
             menu.menu.add("DELETE")
             menu.setOnMenuItemClickListener { item ->
                 if (item.title == "DELETE") {
-                    //delete the note
+                    Realm.init(context)
                     val realm = Realm.getDefaultInstance()
                     realm.beginTransaction()
                     note.deleteFromRealm()
                     realm.commitTransaction()
+                    Handler().postDelayed({
+                        notifyDataSetChanged()
+                    }, 100)
                     Toast.makeText(context, "Note deleted", Toast.LENGTH_SHORT).show()
                 }
                 true
