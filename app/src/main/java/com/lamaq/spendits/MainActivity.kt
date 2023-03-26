@@ -1,20 +1,23 @@
 package com.lamaq.spendits
 
+import android.R.attr.bitmap
 import android.app.Dialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.google.android.material.button.MaterialButton
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 import io.realm.Realm
 import io.realm.RealmResults
 import io.realm.Sort
 
+
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -56,6 +59,12 @@ class MainActivity : AppCompatActivity() {
         val collections = realm.where(Collection::class.java).findAll().sort("name", Sort.ASCENDING)
         val adapter = CollectionAdapter(this, collections)
         recyclerView.adapter = adapter
+
+        if (collections.size == 0) {
+            findViewById<View>(R.id.nothingtodisplay).visibility = View.VISIBLE
+        } else {
+            findViewById<View>(R.id.nothingtodisplay).visibility = View.GONE
+        }
 
         collections.addChangeListener { collections: RealmResults<Collection> ->
             addNoteBtn.text = "Add new collection"

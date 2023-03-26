@@ -11,10 +11,10 @@ import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.RealmResults
 import io.realm.Sort
-
+lateinit var realm: Realm
 class ListActivity : AppCompatActivity() {
 
-    private lateinit var realm: Realm
+
     var total = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

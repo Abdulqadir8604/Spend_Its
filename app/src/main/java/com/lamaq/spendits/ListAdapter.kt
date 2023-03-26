@@ -39,7 +39,6 @@ class ListAdapter(var context: Context, var notesList: RealmResults<Note>) :
             menu.setOnMenuItemClickListener { item ->
                 if (item.title == "DELETE") {
                     Realm.init(context)
-                    val realm = Realm.getDefaultInstance()
                     realm.beginTransaction()
                     note.deleteFromRealm()
                     realm.commitTransaction()
