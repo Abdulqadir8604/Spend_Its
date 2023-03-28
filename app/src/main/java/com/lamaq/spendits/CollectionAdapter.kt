@@ -19,7 +19,7 @@ class CollectionAdapter(private val context: Context, private val collections: R
     RecyclerView.Adapter<CollectionAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view, parent, false))
+        return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.cl_item_view, parent, false))
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -63,6 +63,5 @@ class CollectionAdapter(private val context: Context, private val collections: R
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val amtOutput: TextView = itemView.findViewById(R.id.amtoutput)
         val timeOutput: TextView = itemView.findViewById(R.id.timeoutput)
-        val totalOutput: TextView = itemView.findViewById(R.id.descriptionoutput)
     }
 }

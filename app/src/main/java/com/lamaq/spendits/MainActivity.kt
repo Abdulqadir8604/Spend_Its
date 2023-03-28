@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val addNoteBtn = findViewById<MaterialButton>(R.id.addnewnotebtn)
 
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
+
         addNoteBtn.setOnClickListener {
             val dialog = Dialog(this)
             dialog.setContentView(R.layout.dialog_new_collection)

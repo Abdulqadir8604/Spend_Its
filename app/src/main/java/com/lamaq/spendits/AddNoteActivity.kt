@@ -20,6 +20,10 @@ class AddNoteActivity : AppCompatActivity() {
         val descriptionInput = findViewById<EditText>(R.id.descriptioninput)
         val saveBtn = findViewById<MaterialButton>(R.id.savebtn)
 
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
+
         val collectionName = intent.getStringExtra("collectionName")
 
         Realm.init(applicationContext)

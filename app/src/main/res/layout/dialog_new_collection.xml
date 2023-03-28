@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/material_dynamic_secondary80"
     android:padding="25dp">
 
     <TextView
@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="New Collection"
         android:textSize="24sp"
-        android:textColor="@color/black"
+        android:textColor="@color/material_dynamic_tertiary40"
         android:textStyle="bold" />
 
     <EditText
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="@color/black"
+        android:textColor="@color/material_dynamic_tertiary40"
         android:textColorHint="@color/dark"
         android:hint="Enter name" />
 
@@ -27,8 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/black"
-        android:textColor="@color/white"
+        android:backgroundTint="@color/material_dynamic_primary40"
+        android:textColor="@color/material_dynamic_tertiary80"
         android:text="Create" />
 
 </LinearLayout>

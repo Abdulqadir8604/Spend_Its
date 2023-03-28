@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/rounded_corner_cl"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/amtlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/amtoutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/material_dynamic_tertiary90"
+            android:textSize="30sp"
+            android:padding="5dp"
+            tools:text="My amount" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/baseline_arrow_forward_ios_24"
+            android:contentDescription="arrow" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeoutput"
+        android:layout_below="@id/amtlayout"
+        android:textSize="12sp"
+        android:gravity="end"
+        android:textColor="@color/material_dynamic_tertiary20"
+        tools:text="Jan 21 2020 "/>
+
+</RelativeLayout>

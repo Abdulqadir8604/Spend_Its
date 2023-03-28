@@ -3,26 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
-    android:layout_marginBottom="10dp"
-    android:background="@drawable/rounded_corner"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_margin="10dp"
+    android:background="@drawable/rounded_corner">
 
     <TextView
         android:id="@+id/amtoutput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/material_dynamic_secondary90"
         android:textSize="20dp"
-        tools:text="My amount" />
+        android:text="amount" />
 
     <TextView
         android:id="@+id/descriptionoutput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/amtoutput"
-        android:textColor="#393939"
+        android:textColor="@color/material_dynamic_secondary30"
         android:textSize="15sp"
-        tools:text="My long long long descrption" />
+        android:text="description"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -31,7 +30,7 @@
         android:layout_below="@id/descriptionoutput"
         android:textSize="12dp"
         android:gravity="end"
-        android:textColor="#858484"
-        tools:text="Jan 21 2020 "/>
+        android:textColor="@color/material_dynamic_tertiary20"
+        android:text="date"/>
 
 </RelativeLayout>

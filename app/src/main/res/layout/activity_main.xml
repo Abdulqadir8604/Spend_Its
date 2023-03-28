@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:background="@color/black"
+    android:background="@color/material_dynamic_primary80"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,7 +15,7 @@
         android:text="Spend Its"
         android:textSize="30sp"
         android:gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/material_dynamic_tertiary40"
         android:textStyle="bold"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -42,10 +42,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/white"
-        android:layout_margin="10dp"
-        android:text="Add new note   |   Total = ₹0"
-        android:textColor="#000000" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/material_dynamic_primary40"
+        android:text="Add new note   |   Total = 0"
+        android:textColor="@color/material_dynamic_secondary80" />
 
 
 </RelativeLayout>

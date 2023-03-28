@@ -12,26 +12,23 @@ import androidx.recyclerview.widget.RecyclerView
 import io.realm.Realm
 import io.realm.RealmResults
 import java.text.DateFormat
+import java.util.*
 
 class ListAdapter(var context: Context, var notesList: RealmResults<Note>) :
     RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view, parent, false))
+        val view = LayoutInflater.from(context).inflate(R.layout.item_view, parent, false)
+        return MyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val note = notesList[position]!!
-        holder.amtOutput.text = note.amt
+        holder.amtOutput.text = getCurrencySymbol() + note.getAmt()
         holder.descriptionOutput.text = note.getDescription()
         val formatedTime = DateFormat.getDateTimeInstance().format(note.getCreatedTime())
         holder.timeOutput.text = formatedTime
-
-        holder.itemView.background.setTint(context.getColor(R.color.white))
-        holder.amtOutput.setTextColor(context.getColor(R.color.dark))
-        holder.descriptionOutput.setTextColor(context.getColor(R.color.dark))
-        holder.timeOutput.setTextColor(context.getColor(R.color.dark))
 
         holder.itemView.setOnLongClickListener { v ->
             val menu = PopupMenu(context, v)
@@ -69,4 +66,9 @@ class ListAdapter(var context: Context, var notesList: RealmResults<Note>) :
             timeOutput = itemView.findViewById(R.id.timeoutput)
         }
     }
+}
+fun getCurrencySymbol(): String {
+    val locale = Locale.getDefault()
+    val currency = Currency.getInstance(locale)
+    return currency.symbol
 }

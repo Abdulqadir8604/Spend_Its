@@ -14,10 +14,7 @@ open class Collection(
         get() = notes.sumOf { it.amt.toDouble() }
 
     fun aq_deleteFromRealm() {
-        // Delete all the notes associated with the collection
-        notes.deleteAllFromRealm()
-
-        // Delete the collection
-        super.deleteFromRealm()
+        notes.forEach { it.deleteFromRealm() }
+        deleteFromRealm()
     }
 }
