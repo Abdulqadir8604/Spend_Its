@@ -17,7 +17,7 @@ import java.util.*
 lateinit var realm: Realm
 class ListActivity : AppCompatActivity() {
 
-    var total = 0
+    private var total = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -56,7 +56,7 @@ class ListActivity : AppCompatActivity() {
         for (note in notesList) {
             total += note.amt.toInt()
         }
-        addNoteBtn.text = "Add new note   |   Total = ${getCurrencySymbol()}${total}"
+        addNoteBtn.text = "Add new note   |   Total = ${total}"
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
         val myAdapter = ListAdapter(applicationContext, notesList)
@@ -67,7 +67,7 @@ class ListActivity : AppCompatActivity() {
             for (note in notes) {
                 total += note.amt.toInt()
             }
-            addNoteBtn.text = "Add new note   |   Total = ${getCurrencySymbol()}${total}"
+            addNoteBtn.text = "Add new note   |   Total = ${total}"
 
             if (notes.size == 0) {
                 findViewById<View>(R.id.nothingtodisplay).visibility = View.VISIBLE
@@ -76,10 +76,5 @@ class ListActivity : AppCompatActivity() {
             }
             myAdapter.notifyDataSetChanged()
         }
-    }
-    fun getCurrencySymbol(): String {
-        val locale = Locale.getDefault()
-        val currency = Currency.getInstance(locale)
-        return currency.symbol
     }
 }

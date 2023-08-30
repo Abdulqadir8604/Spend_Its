@@ -3,11 +3,12 @@
 
     <item
         android:drawable="@drawable/splash_bg"
-        android:background="@color/material_dynamic_primary80" />
+        android:background="@color/background" />
 
     <item>
         <bitmap
             android:src="@mipmap/ic_launcher_foreground"
+            android:tint="@color/primary"
             android:gravity="center"/>
     </item>
 

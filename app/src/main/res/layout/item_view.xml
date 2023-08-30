@@ -10,7 +10,7 @@
         android:id="@+id/amtoutput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/material_dynamic_secondary90"
+        android:textColor="@color/secondary"
         android:textSize="20dp"
         android:text="amount" />
 
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/amtoutput"
-        android:textColor="@color/material_dynamic_secondary30"
+        android:textColor="@color/secondary"
         android:textSize="15sp"
         android:text="description"/>
 
@@ -30,7 +30,7 @@
         android:layout_below="@id/descriptionoutput"
         android:textSize="12dp"
         android:gravity="end"
-        android:textColor="@color/material_dynamic_tertiary20"
+        android:textColor="@color/helperText"
         android:text="date"/>
 
 </RelativeLayout>

@@ -1,34 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:background="@drawable/rounded_corner"
     android:layout_height="wrap_content"
+    android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@color/material_dynamic_secondary80"
+    android:elevation="8dp"
     android:padding="25dp">
 
     <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:text="New Collection"
+        android:textColor="@color/helperText"
         android:textSize="24sp"
-        android:textColor="@color/material_dynamic_tertiary40"
         android:textStyle="bold" />
 
     <EditText
+        android:hint="Enter name"
         android:id="@+id/et_collection_name"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="@color/material_dynamic_tertiary40"
-        android:textColorHint="@color/dark"
-        android:hint="Enter name" />
+        android:layout_width="match_parent"
+        android:textColor="@color/secondary"
+        android:textColorHint="@color/helperText" />
 
     <Button
+        android:backgroundTint="@color/helperText"
         android:id="@+id/btn_create"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/material_dynamic_primary40"
-        android:textColor="@color/material_dynamic_tertiary80"
-        android:text="Create" />
+        android:layout_width="match_parent"
+        android:text="Create"
+        android:textColor="@color/primary" />
 
 </LinearLayout>

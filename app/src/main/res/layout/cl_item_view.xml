@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:textColor="@color/material_dynamic_tertiary90"
+            android:textColor="@color/secondary"
             android:textSize="30sp"
             android:padding="5dp"
             tools:text="My amount" />
@@ -46,7 +46,7 @@
         android:layout_below="@id/amtlayout"
         android:textSize="12sp"
         android:gravity="end"
-        android:textColor="@color/material_dynamic_tertiary20"
+        android:textColor="@color/helperText"
         tools:text="Jan 21 2020 "/>
 
 </RelativeLayout>

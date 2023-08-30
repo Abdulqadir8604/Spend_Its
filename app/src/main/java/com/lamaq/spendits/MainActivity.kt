@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.color.DynamicColors
 import io.realm.Realm
 import io.realm.RealmResults
 import io.realm.Sort
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val addNoteBtn = findViewById<MaterialButton>(R.id.addnewnotebtn)
 
         if (supportActionBar != null) {

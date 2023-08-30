@@ -25,7 +25,7 @@ class ListAdapter(var context: Context, var notesList: RealmResults<Note>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val note = notesList[position]!!
-        holder.amtOutput.text = getCurrencySymbol() + note.getAmt()
+        holder.amtOutput.text = note.getAmt()
         holder.descriptionOutput.text = note.getDescription()
         val formatedTime = DateFormat.getDateTimeInstance().format(note.getCreatedTime())
         holder.timeOutput.text = formatedTime
@@ -66,9 +66,4 @@ class ListAdapter(var context: Context, var notesList: RealmResults<Note>) :
             timeOutput = itemView.findViewById(R.id.timeoutput)
         }
     }
-}
-fun getCurrencySymbol(): String {
-    val locale = Locale.getDefault()
-    val currency = Currency.getInstance(locale)
-    return currency.symbol
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:background="@color/material_dynamic_primary80"
+    android:background="@color/background"
     android:padding="20dp"
     tools:context=".AddNoteActivity">
 
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/titletextview"
         android:text="Add new note"
-        android:textColor="@color/material_dynamic_tertiary40"
+        android:textColor="@color/primary"
         android:textSize="25sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -33,21 +33,24 @@
             android:layout_height="wrap_content"
             android:id="@+id/amtinput"
             android:hint="Amount"
-            android:textColorHint="#80000000"
-            android:background="@color/material_dynamic_tertiary80"
-            android:textColor="@color/material_dynamic_primary30"
+            android:textColorHint="@color/helperText"
+            android:background="@color/primary"
+            android:textColor="@color/secondary"
             android:padding="10dp"
             android:inputType="number"
             android:layout_margin="10dp"/>
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/descriptioninput"
             android:hint="Decription"
-            android:background="@color/material_dynamic_tertiary80"
-            android:textColorHint="#80000000"
+            android:background="@color/primary"
+            android:textColorHint="@color/helperText"
             android:padding="10dp"
-            android:textColor="@color/material_dynamic_primary30"
+            android:textColor="@color/secondary"
             android:layout_margin="10dp"
             android:lines="5"
             android:gravity="top"/>
@@ -61,8 +64,8 @@
         android:id="@+id/savebtn"
         android:text="SAVE NOTE"
         android:layout_gravity="center"
-        android:backgroundTint="@color/material_dynamic_primary40"
-        android:textColor="@color/material_dynamic_secondary80"/>
+        android:backgroundTint="@color/primary"
+        android:textColor="@color/helperText"/>
 
 
 </LinearLayout>

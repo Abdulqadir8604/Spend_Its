@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:background="@color/material_dynamic_primary80"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/notestitle"
         android:text="Spend Its"
         android:textSize="30sp"
         android:gravity="center"
-        android:textColor="@color/material_dynamic_tertiary40"
+        android:textAlignment="center"
+        android:textColor="@color/primary"
         android:textStyle="bold"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -32,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="nothing to show..."
-        android:textColor="#80FFFFFF"
+        android:textColor="@color/primary"
         android:textSize="20dp"
         android:visibility="gone"
         android:textStyle="bold" />
@@ -46,9 +47,9 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/material_dynamic_primary40"
+        android:backgroundTint="@color/primary"
         android:text="Add new note   |   Total = 0"
-        android:textColor="@color/material_dynamic_secondary80" />
+        android:textColor="@color/helperText" />
 
 
 </RelativeLayout>
